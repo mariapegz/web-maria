@@ -10,18 +10,89 @@
 	<main class="container">
 		<h1>María Pereira</h1>
 		<h2>Ingeniera de Organización Industrial</h2>
-		<section class="trayectoria">
-			<p>
-				Soy ingeniera de organización industrial con experiencia en gestión de proyectos, optimización de procesos y liderazgo de equipos multidisciplinares. Mi trayectoria profesional se ha enfocado en mejorar la eficiencia operativa y promover la innovación en entornos industriales y empresariales.
-			</p>
+		<div class="tabs">
+			<button class="tab-button active" onclick="showTab('personal')">Datos personales</button>
+			<button class="tab-button" onclick="showTab('education')">Educación</button>
+			<button class="tab-button" onclick="showTab('career')">Experiencia profesional</button>
+			<button class="tab-button" onclick="showTab('knowledge')">Conocimientos</button>
+			<button class="tab-button" onclick="showTab('languages')">Idiomas</button>
+			<button class="tab-button" onclick="showTab('interests')">Intereses</button>
+		</div>
+		<section id="personal" class="tab-content active">
+			<ul>
+				<li><strong>Fecha de nacimiento:</strong> 08/03/2002</li>
+				<li><strong>Nacionalidad:</strong> Española</li>
+				<li><strong>Dirección:</strong> José María Martinez N3 2E; 33209, España</li>
+				<li><strong>Teléfono:</strong> +34 671475512</li>
+				<li><strong>Email:</strong> mariapegz@gmail.com</li>
+			</ul>
+		</section>
+		<section id="education" class="tab-content">
+			<ul>
+				<li><strong>2020-2025:</strong> Universidad de Oviedo | Ingeniería en Organización Industrial</li>
+				<li><strong>2022-2023:</strong> Erasmus+ en University of Vaasa (Finlandia)</li>
+				<li><strong>2018-2020:</strong> Bachillerato en Ciencias y Tecnología, C.E.S. San Eutiquio La Salle</li>
+			</ul>
+		</section>
+		<section id="career" class="tab-content">
+			<ul>
+				<li><strong>2023-2024:</strong> Ingeniera de Organización Industrial en ACCIONA, Gijón
+					<ul>
+						<li>Análisis de datos y reporting con Excel</li>
+						<li>Elaboración de documentación técnica y memorias</li>
+					</ul>
+				</li>
+				<li><strong>2020-presente:</strong> Profesora en MENTOOR y Centro de Estudios Quijote, Gijón
+					<ul>
+						<li>Preparación de materiales educativos y de práctica</li>
+						<li>Clases de apoyo y preparación de certificados Cambridge</li>
+						<li>Clases online y presenciales</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+		<section id="knowledge" class="tab-content">
 			<ul>
 				<li>Gestión de proyectos industriales</li>
 				<li>Optimización de procesos productivos</li>
 				<li>Liderazgo y coordinación de equipos</li>
-				<li>Implementación de metodologías Lean y Six Sigma</li>
+				<li>Metodologías Lean y Six Sigma</li>
 				<li>Transformación digital y mejora continua</li>
+				<li>Big Data y Business Analytics</li>
+			</ul>
+		</section>
+		<section id="languages" class="tab-content">
+			<ul>
+				<li><strong>Español:</strong> Nativo</li>
+				<li><strong>Inglés:</strong> B2 (Cambridge Certificate)</li>
+				<li><strong>Francés:</strong> A2 (Alliance Française)</li>
+				<li><strong>Alemán:</strong> A1 (Escuela Oficial de Idiomas)</li>
+			</ul>
+		</section>
+		<section id="interests" class="tab-content">
+			<ul>
+				<li>Energías renovables</li>
+				<li>Big Data</li>
+				<li>Business Analytics</li>
+				<li>Marketing estratégico</li>
+				<li>Logística</li>
+				<li>Mercados emergentes</li>
 			</ul>
 		</section>
 	</main>
+	<script>
+		function showTab(tabId) {
+			document.querySelectorAll('.tab-content').forEach(function(tab) {
+				tab.classList.remove('active');
+			});
+			document.querySelectorAll('.tab-button').forEach(function(btn) {
+				btn.classList.remove('active');
+			});
+			document.getElementById(tabId).classList.add('active');
+			const buttons = document.querySelectorAll('.tab-button');
+			const ids = ['personal','education','career','knowledge','languages','interests'];
+			buttons[ids.indexOf(tabId)].classList.add('active');
+		}
+	</script>
 </body>
 </html>
